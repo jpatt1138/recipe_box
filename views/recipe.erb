@@ -1,0 +1,19 @@
+<div class="container">
+ <h1><%= @recipe.name() %></h1>
+ <h3>Rating:</h3> (rating here later)
+ <h3>Category: <%= @recipe.category %></h3>
+  <h2>Ingredients:</h2>
+ <ul>
+   <% @recipe.ingredients.each() do |ingredient| %>
+    <li><%= ingredient.name() %> </li>
+    <% end %>
+  </ul>
+  <h2>Instructions:</h2>
+  <%= @recipe.instructions() %>
+  <br>
+
+  <a href="/">GO BACK TO THE HOMEPAGE ALREADY, JEEZ</a>
+
+  <a href="/recipe/<%= @recipe.id() %>/edit">You think you're so smart, fine, edit my recipes! See if I care</a>
+
+</div>

@@ -1,0 +1,45 @@
+<h1>Welcome to the Recipe Box Sucka</h1>
+
+
+
+<h4>Current Recipes:</h4>
+
+  <% @recipes.each do |recipe| %>
+    <ul>
+      <li><a href="/recipe/<%= recipe.id() %>"><%= recipe.name() %></a></li>
+    </ul>
+  <% end %>
+
+<h4>Would you like to add a recipe?</h4>
+
+<div id="form">
+  <form action="/" method="post">
+    <label for="recipe">What's it called</label>
+    <input id="recipe" name="recipe" type="text">
+
+    <label for="category">What the hell kind of food is it?</label>
+          <select id="category" name='category' type='text'>
+              <option value="chinese"> Chinese </option>
+              <option value="Italian"> Italian </option>
+              <option value="Tastey"> Tastey </option>
+              <option value="Not Tastey"> Not Tastey </option>
+              <option value="Roadkill"> Roadkill </option>
+              <option value="Snack"> Snack </option>
+              <option value="Snakes"> Snakes </option>
+              <option value="Jell-O!!!!"> Jell-O!!!! </option>
+              <option value="BBQ"> BBQ </option>
+              <option value="pork can still be a category, right?"> pork can still be a category, right? </option>
+              <option value="pork again"> pork again </option>
+              <option value="dog food"> dog food </option>
+              <option value="???????"> ??????? </option>
+          </select>
+
+    <label for="ingredients">Ingredients</label>
+    <input id="ingredients" name="ingredients" type="text">
+
+    <label for="instructions">How do you make it?</label>
+    <input id="instructions" name="instructions" type="text">
+
+    <button type="submit">Save</button>
+  </form>
+</div>

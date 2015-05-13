@@ -1,0 +1,32 @@
+<h1>So you think you can edit <%= @recipe.name() %>?</h1>
+
+<div id="form">
+  <form action="/recipe/<%= @recipe.id() %>" method="post">
+    <input name="_method" type="hidden" value="patch">
+
+    <label for="category">What the hell kind of food is it?</label>
+          <select id="category" name='category' type='text'>
+              <option value="chinese"> Chinese </option>
+              <option value="Italian"> Italian </option>
+              <option value="Tastey"> Tastey </option>
+              <option value="Not Tastey"> Not Tastey </option>
+              <option value="Roadkill"> Roadkill </option>
+              <option value="Snack"> Snack </option>
+              <option value="Snakes"> Snakes </option>
+              <option value="Jell-O!!!!"> Jell-O!!!! </option>
+              <option value="BBQ"> BBQ </option>
+              <option value="pork can still be a category, right?"> pork can still be a category, right? </option>
+              <option value="pork again"> pork again </option>
+              <option value="dog food"> dog food </option>
+              <option value="???????"> ??????? </option>
+          </select>
+
+    <label for="ingredients">Ingredients</label>
+    <input id="ingredients" name="ingredients" type="text">
+
+    <label for="instructions">How do you make it?</label>
+    <input id="instructions" name="instructions" type="text">
+
+    <button type="submit">Save</button>
+  </form>
+</div>

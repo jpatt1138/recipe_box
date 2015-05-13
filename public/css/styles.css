@@ -1,0 +1,15 @@
+body {
+  font-family: 'Patrick Hand', cursive;
+
+}
+
+body {
+  background: url("http://nexxtlevelup.com/wp-content/uploads/confused-man-kitchen.jpg")  repeat; nowhitespace: afterproperty;
+  background-repeat: repeat;
+  color: white;
+
+}
+
+.container {
+  background-color: blue;
+}

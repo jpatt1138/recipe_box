@@ -39,16 +39,22 @@ end
 
 post('/') do
   @recipes = Recipe.all()
+
   name = params.fetch("recipe")
-  category = params.fetch("category")
   ingredients = params.fetch("ingredients")
   instructions = params.fetch("instructions")
   new_recipe = Recipe.create({:name => name, :instructions => instructions})
+
   ingredients_array = ingredients.split("; ")
   ingredients_array.each do |ingredient|
     ingredient_new = Ingredient.create({ :name => ingredient})
     ingredient_new.recipes.push(new_recipe)
   end
+
+  category_name = params.fetch("category")
+  new_category = Category.create({:name => category_name})
+  new_category.recipes.push(new_recipe)
+
   erb(:index)
 end
 

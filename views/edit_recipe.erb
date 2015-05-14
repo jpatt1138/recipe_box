@@ -5,21 +5,22 @@
     <input name="_method" type="hidden" value="patch">
 
     <label for="category">What the hell kind of food is it?</label>
-          <select id="category" name='category' type='text'>
-              <option value="chinese"> Chinese </option>
-              <option value="Italian"> Italian </option>
-              <option value="Tastey"> Tastey </option>
-              <option value="Not Tastey"> Not Tastey </option>
-              <option value="Roadkill"> Roadkill </option>
-              <option value="Snack"> Snack </option>
-              <option value="Snakes"> Snakes </option>
-              <option value="Jell-O!!!!"> Jell-O!!!! </option>
-              <option value="BBQ"> BBQ </option>
-              <option value="pork can still be a category, right?"> pork can still be a category, right? </option>
-              <option value="pork again"> pork again </option>
-              <option value="dog food"> dog food </option>
-              <option value="???????"> ??????? </option>
-          </select>
+    <div id="check_group">
+      <!-- <input type="hidden" name="category[]" value="food"> -->
+      <input type="checkbox" name="category[]" value="chinese"> Chinese </input>
+      <input type="checkbox" name="category[]" value="Italian"> Italian </input>
+      <input type="checkbox" name="category[]" value="Tastey"> Tastey </input>
+      <input type="checkbox" name="category[]" value="Not Tastey"> Not Tastey </input>
+      <input type="checkbox" name="category[]" value="Roadkill"> Roadkill </input>
+      <input type="checkbox" name="category[]" value="Snack"> Snack </input>
+      <input type="checkbox" name="category[]" value="Snakes"> Snakes </input>
+      <input type="checkbox" name="category[]" value="Jell-O!!!!"> Jell-O!!!! </input>
+      <input type="checkbox" name="category[]" value="BBQ"> BBQ </input>
+      <input type="checkbox" name="category[]" value="pork can still be a category, right?"> pork can still be a category, right? </input>
+      <input type="checkbox" name="category[]" value="pork again"> pork again </input>
+      <input type="checkbox" name="category[]" value="dog food"> dog food </input>
+      <input type="checkbox" name="category[]" value="???????"> ??????? </input>
+    </div>
 
     <label for="ingredients">Ingredients</label>
     <input id="ingredients" name="ingredients" type="text">
@@ -30,3 +31,8 @@
     <button type="submit">Save</button>
   </form>
 </div>
+
+<form action="/recipes/<%= @recipe.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete"><br>
+  <button type="submit" class="btn btn-primary btn-md">Delete Recipe</button>
+</form>

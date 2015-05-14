@@ -4,7 +4,6 @@ require('capybara/rspec')
  Capybara.app = Sinatra::Application
  set(:show_exceptions, false)
 
-
 describe('the adding of recipes', {:type => :feature}) do
   it("adds a recipe to the database") do
     visit('/')

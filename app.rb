@@ -34,7 +34,6 @@ patch('/recipe/:id') do
   end
   @recipe.update({:ingredients => ingredients, :instructions => instructions })
   @recipes = Recipe.all()
-  # erb(:recipe)
   redirect to("/recipe/#{@recipe.id}")
 end
 
@@ -47,11 +46,9 @@ post('/') do
   new_recipe = Recipe.create({:name => name, :instructions => instructions})
   ingredients_array = ingredients.split("; ")
   ingredients_array.each do |ingredient|
-  ingredient_new = Ingredient.create({ :name => ingredient})
-  ingredient_new.recipes.push(new_recipe)
+    ingredient_new = Ingredient.create({ :name => ingredient})
+    ingredient_new.recipes.push(new_recipe)
   end
-
-
   erb(:index)
 end
 

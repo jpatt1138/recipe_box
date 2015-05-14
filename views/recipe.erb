@@ -1,11 +1,14 @@
-<div class="container">
+
  <h1><%= @recipe.name() %></h1>
  <h3>Rating:</h3>
 
 <% @recipe.rating().times do |zoid| %>
-  <div class="col-md-1"><img class="zoidberg"src="/img/zoidberg.jpg"></div>
-<% end %>
 
+    <div class="col-md-1"><img class="zoidberg" width="50" src="/img/zoidberg.jpg"></div>
+
+<% end %>
+<br>
+<br>
 <h3>Category:</h3>
  <ul>
    <% @recipe.categories.each() do |category| %>
@@ -26,7 +29,6 @@
 
   <a href="/recipe/<%= @recipe.id() %>/edit">You think you're so smart, fine, edit my recipes! See if I care</a>
 
-</div>
 
 
 <form action="/recipes/<%= @recipe.id() %>" method="post">

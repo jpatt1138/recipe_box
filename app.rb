@@ -4,7 +4,7 @@ Bundler.require(:default)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file}
 
 get('/') do
-  @recipes = Recipe.all()
+  @recipes = Recipe.all.order(rating: :desc)
   erb(:index)
 end
 
@@ -76,7 +76,7 @@ patch('/recipe/:id') do
 end
 
 post('/') do
-  @recipes = Recipe.all()
+  @recipes = Recipe.all.order(rating: :desc)
 
   name = params.fetch("recipe")
   ingredients = params.fetch("ingredients")

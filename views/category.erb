@@ -1,0 +1,9 @@
+<h1>Hey, dude! Here are all the recipes in <%= @category.name %></h1>
+
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li><%= recipe.name() %></li>
+    <% end %>
+  </ul>
+
+<a href="/">Home</a>
